@@ -35,9 +35,9 @@ ball.shapesize(stretch_wid=1, stretch_len=1)
 ball.penup()
 ball.goto(0, 0)
 
-# Ball starts with a random direction
-ball.dx = random.choice([0.2, -0.2])  # Randomly start moving left or right
-ball.dy = random.choice([0.2, -0.2])  # Randomly start moving up or down
+# Slow down the ball movement by reducing initial speed
+ball.dx = random.choice([0.1, -0.1])  # Slower speed, left or right
+ball.dy = random.choice([0.1, -0.1])  # Slower speed, up or down
 
 # -----------------Score-----------------#
 score1 = 0  # Left player score
@@ -107,8 +107,8 @@ while True:
     # Right goal
     if ball.xcor() > 390:
         ball.goto(0, 0)
-        ball.dx = random.choice([0.2, -0.2])  # Random reset direction
-        ball.dy = random.choice([0.2, -0.2])
+        ball.dx = random.choice([0.1, -0.1])  # Random reset with slower speed
+        ball.dy = random.choice([0.1, -0.1])
         score1 += 1
         score.clear()
         score.write("Player 1 : {} Player 2 : {}".format(score1, score2), align="center", font=("Courier", 24, "normal"))
@@ -116,8 +116,8 @@ while True:
     # Left goal
     if ball.xcor() < -390:
         ball.goto(0, 0)
-        ball.dx = random.choice([0.2, -0.2])  # Random reset direction
-        ball.dy = random.choice([0.2, -0.2])
+        ball.dx = random.choice([0.1, -0.1])  # Random reset with slower speed
+        ball.dy = random.choice([0.1, -0.1])
         score2 += 1
         score.clear()
         score.write("Player 1 : {} Player 2 : {}".format(score1, score2), align="center", font=("Courier", 24, "normal"))
